@@ -24,7 +24,7 @@ function keyboard() {
   
   var_dump($keyboard = json_encode($keyboard = ['keyboard' => [
   ['Обучение','Реферал'],
-  ['Обратная связь']
+//  ['Обратная связь']
   ] ,
   'resize_keyboard' => true,
   'one_time_keyboard' => false,
