@@ -117,6 +117,22 @@ function MessageSave($data)
     }
 }
 
+function IdeaSave($uid, $username, $first_name, $text)
+{
+    $pdo = connect();
+    if ($pdo) {
+
+            $data = array("id" => $uid, "username" => $username, "first_name" => $first_name,
+                "idea" => $text);
+            $st = $pdo->prepare("INSERT INTO  ideas (id, username, first_name, idea) 
+          VALUES(:id, :username, :first_name, :idea)");
+            $st->execute($data);
+
+            return true;
+    }
+    return false;
+}
+
 function addUser($uid, $username, $first_name)
 {
 
